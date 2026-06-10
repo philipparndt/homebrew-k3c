@@ -5,13 +5,13 @@
 class K3c < Formula
   desc "Local k3s clusters on Apple container — like k3d, without Docker"
   homepage "https://github.com/philipparndt/k3c"
-  version "0.4.3"
+  version "0.4.4"
   license "Apache-2.0"
   depends_on :macos
 
   if Hardware::CPU.intel?
-    url "https://github.com/philipparndt/k3c/releases/download/v0.4.3/k3c_darwin_x86_64.tar.gz"
-    sha256 "691f02bcd05cfaa30d4e27ab9deff563adbe1c434b7687a40312c801eae19011"
+    url "https://github.com/philipparndt/k3c/releases/download/v0.4.4/k3c_darwin_x86_64.tar.gz"
+    sha256 "0d3a280c094424a3fc01d95ef02dec11b7c028f1ce2970be4d71b0260c0d951b"
 
     define_method(:install) do
       bin.install "k3c"
@@ -39,8 +39,8 @@ class K3c < Formula
     end
   end
   if Hardware::CPU.arm?
-    url "https://github.com/philipparndt/k3c/releases/download/v0.4.3/k3c_darwin_arm64.tar.gz"
-    sha256 "4980bd54371df79b64e446f594f6db9d82e3d9a4c190bc22e35ec16a3ddfec1b"
+    url "https://github.com/philipparndt/k3c/releases/download/v0.4.4/k3c_darwin_arm64.tar.gz"
+    sha256 "7d8198458fbce77790d8d62c7369992d8bcffde66ee97f4091ad89fe6d689bef"
 
     define_method(:install) do
       bin.install "k3c"
