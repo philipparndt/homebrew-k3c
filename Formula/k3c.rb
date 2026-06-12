@@ -5,42 +5,13 @@
 class K3c < Formula
   desc "Local k3s clusters on Apple container — like k3d, without Docker"
   homepage "https://github.com/philipparndt/k3c"
-  version "0.4.4"
+  version "0.6.4"
   license "Apache-2.0"
   depends_on :macos
 
-  if Hardware::CPU.intel?
-    url "https://github.com/philipparndt/k3c/releases/download/v0.4.4/k3c_darwin_x86_64.tar.gz"
-    sha256 "0d3a280c094424a3fc01d95ef02dec11b7c028f1ce2970be4d71b0260c0d951b"
-
-    define_method(:install) do
-      bin.install "k3c"
-
-      begin
-        bash_output = Utils.safe_popen_read({ "SHELL" => "bash" }, "#{bin}/k3c completion bash")
-        (bash_completion/"k3c").write bash_output
-      rescue => e
-        opoo "Failed to install bash completion: #{e}"
-      end
-
-      begin
-        zsh_output = Utils.safe_popen_read({ "SHELL" => "zsh" }, "#{bin}/k3c completion zsh")
-        (zsh_completion/"_k3c").write zsh_output
-      rescue => e
-        opoo "Failed to install zsh completion: #{e}"
-      end
-
-      begin
-        fish_output = Utils.safe_popen_read({ "SHELL" => "fish" }, "#{bin}/k3c completion fish")
-        (fish_completion/"k3c.fish").write fish_output
-      rescue => e
-        opoo "Failed to install fish completion: #{e}"
-      end
-    end
-  end
   if Hardware::CPU.arm?
-    url "https://github.com/philipparndt/k3c/releases/download/v0.4.4/k3c_darwin_arm64.tar.gz"
-    sha256 "7d8198458fbce77790d8d62c7369992d8bcffde66ee97f4091ad89fe6d689bef"
+    url "https://github.com/philipparndt/k3c/releases/download/v0.6.4/k3c_darwin_arm64.tar.gz"
+    sha256 "465a65a379682b9c7b1e365813904c3cad604655ad880d1907bc05c31d2106b1"
 
     define_method(:install) do
       bin.install "k3c"
