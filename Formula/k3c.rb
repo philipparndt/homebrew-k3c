@@ -5,13 +5,13 @@
 class K3c < Formula
   desc "Local k3s clusters on Apple container — like k3d, without Docker"
   homepage "https://github.com/philipparndt/k3c"
-  version "0.12.7"
+  version "0.12.8"
   license "Apache-2.0"
   depends_on :macos
 
   if Hardware::CPU.arm?
-    url "https://github.com/philipparndt/k3c/releases/download/v0.12.7/k3c_darwin_arm64.tar.gz"
-    sha256 "c120f1aa0ec4c2f0e5d2d5e57112948dfbbce396084199361936bc9301bbe7d8"
+    url "https://github.com/philipparndt/k3c/releases/download/v0.12.8/k3c_darwin_arm64.tar.gz"
+    sha256 "016a613366772032a6d785d7069aa408fdc2317e88c68777f7a79f9f377fd1b9"
 
     define_method(:install) do
       bin.install "k3c"
